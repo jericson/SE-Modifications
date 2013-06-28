@@ -139,7 +139,7 @@ inject(function ($) {
             'Ovadiah': [16182, 1]
         };
 
-        var reg = /(\(|\s|^)\[(?:ref|t)[;,. :-]([\w ]{2,}?)[;.,:-](\d{1,2})([;., :-]\d{1,3})?([;., :-][tr]{0,2})?\](\)|\s|$)/mig,
+        var reg = /(\(|\s|^)\[(?:ref|t)[;,. :-]([\dIi]{0,3}[\w ]{2,}?)(\d{1,2})([;., :-]\d{1,3})?([;., :-][tr]{0,2})?\](\)|\s|$)/mig,
             match;
 
         while ((match = reg.exec(t.value)) !== null) {
@@ -182,7 +182,7 @@ inject(function ($) {
                     if (vrs) {
                         vrs = ':' + vrs;
                     }
-                    var title = '[' + book + ' ' + chpt + vrs + ']';
+                    var title = '[' + t.value + ']';
                     t.value = t.value.replace(match[0], match[1] + title + '(' + url + ')' + match[6]);
                 } else {
                     t.value = t.value.replace(match[0], match[1] + url + match[6]);
