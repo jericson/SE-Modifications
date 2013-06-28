@@ -182,7 +182,7 @@ inject(function ($) {
                     if (vrs) {
                         vrs = ':' + vrs;
                     }
-                    var title = '[' + t.value + ']';
+                    var title = '[' + match[2] + match[3] + match[4] + ']';
                     t.value = t.value.replace(match[0], match[1] + title + '(' + url + ')' + match[6]);
                 } else {
                     t.value = t.value.replace(match[0], match[1] + url + match[6]);
